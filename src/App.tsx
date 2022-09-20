@@ -1,12 +1,16 @@
 import React from 'react';
-import { Typography } from '@mui/material';
+import { CssBaseline } from '@mui/material';
+import { useRoutes } from 'react-router-dom';
+import { routes } from './Router';
+import { ThemeProviderWrapper } from './theme/ThemeProvider';
 
 export const App = () => {
+  const content = useRoutes(routes);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <Typography>FairyFromAlfeya</Typography>
-      </header>
-    </div>
+    <ThemeProviderWrapper>
+      <CssBaseline />
+      {content}
+    </ThemeProviderWrapper>
   );
 };
