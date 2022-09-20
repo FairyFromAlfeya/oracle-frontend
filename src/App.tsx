@@ -1,12 +1,11 @@
 import React from 'react';
+import { Typography } from '@mui/material';
 
 export const App = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
+        <Typography>FairyFromAlfeya</Typography>
       </header>
     </div>
   );
