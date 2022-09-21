@@ -8,6 +8,8 @@ export class PairsStore {
 
   private _total = 0;
 
+  private _isInitialized = false;
+
   constructor(private readonly rootStore: RootStore) {
     makeAutoObservable(this);
 
@@ -22,6 +24,10 @@ export class PairsStore {
 
   get total(): number {
     return this._total;
+  }
+
+  get isInitialized(): boolean {
+    return this._isInitialized;
   }
 
   pushPair = (pair: Pair): void => {
@@ -51,5 +57,10 @@ export class PairsStore {
   private _loadAllPairs = (): Promise<void> =>
     this.rootStore.apiStore
       .listPairs(0, 10_000)
-      .then((response) => this._setPairsAndTotal(response));
+      .then((response) => this._setPairsAndTotal(response))
+      .then(() => this._initialize());
+
+  private _initialize = (): void => {
+    this._isInitialized = true;
+  };
 }

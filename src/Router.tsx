@@ -17,6 +17,14 @@ const OraclePairsPage = Loader(
   ),
 );
 
+const PriceChartsPage = Loader(
+  lazy(() =>
+    import('./pages/PriceCharts').then(({ PriceCharts }) => ({
+      default: PriceCharts,
+    })),
+  ),
+);
+
 export const routes: RouteObject[] = [
   {
     path: '',
@@ -34,6 +42,10 @@ export const routes: RouteObject[] = [
       {
         path: 'pairs',
         element: OraclePairsPage,
+      },
+      {
+        path: 'prices',
+        element: PriceChartsPage,
       },
     ],
   },

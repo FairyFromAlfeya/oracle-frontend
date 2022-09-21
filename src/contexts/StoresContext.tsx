@@ -8,10 +8,12 @@ import React, {
 import { ApiStore } from '../stores/ApiStore';
 import { RootStore } from '../stores/RootStore';
 import { PairsStore } from '../stores/PairsStore';
+import { PriceChartStore } from '../stores/PriceChartStore';
 
 export interface Stores {
   apiStore: ApiStore;
   pairsStore: PairsStore;
+  priceChartStore: PriceChartStore;
 }
 
 const rootStore = new RootStore();
@@ -19,6 +21,7 @@ const rootStore = new RootStore();
 const stores: Stores = {
   apiStore: rootStore.apiStore,
   pairsStore: rootStore.pairsStore,
+  priceChartStore: rootStore.priceChartStore,
 };
 
 export const StoreContext: Context<Stores> = createContext(stores);
