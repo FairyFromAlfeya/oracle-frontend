@@ -142,7 +142,7 @@ export const Menu = () => {
         component="div"
         subheader={
           <ListSubheader component="div" disableSticky>
-            Dashboards
+            Oracle
           </ListSubheader>
         }
       >
@@ -153,10 +153,10 @@ export const Menu = () => {
                 disableRipple
                 component={RouterLink}
                 onClick={closeSidebar}
-                to="/dashboards/crypto"
+                to="/oracle/pairs"
                 startIcon={<BrightnessLowTwoToneIcon />}
               >
-                Cryptocurrency
+                Oracle Pairs
               </Button>
             </ListItem>
             <ListItem component="div">
@@ -164,10 +164,10 @@ export const Menu = () => {
                 disableRipple
                 component={RouterLink}
                 onClick={closeSidebar}
-                to="/dashboards/messenger"
+                to="/oracle/prices"
                 startIcon={<MmsTwoToneIcon />}
               >
-                Messenger
+                Price Charts
               </Button>
             </ListItem>
           </List>
