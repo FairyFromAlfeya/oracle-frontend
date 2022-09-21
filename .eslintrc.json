@@ -39,5 +39,6 @@
         "no-console": ["off"],
         "no-plusplus": ["off"],
         "react/require-default-props": ["off"]
-    }
+    },
+    "ignorePatterns": ["build/*"]
 }
