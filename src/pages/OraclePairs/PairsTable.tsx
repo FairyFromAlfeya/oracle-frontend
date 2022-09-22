@@ -19,6 +19,7 @@ import {
   Grid,
 } from '@mui/material';
 import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone';
+import DataArrayIcon from '@mui/icons-material/DataArray';
 import { useStores } from '../../hooks/UseStores';
 import { ListPairsResponse } from '../../dto/ListPairsResponse';
 import { PageHeader } from './PageHeader';
@@ -93,6 +94,21 @@ export const PairsTable: FC = () => {
                   </TableRow>
                 </TableHead>
                 <TableBody>
+                  {pairs[0].length < 1 && (
+                    <TableRow>
+                      <TableCell align="center" colSpan={5}>
+                        <DataArrayIcon fontSize="large" />
+                        <Typography
+                          variant="h2"
+                          fontWeight="bold"
+                          color="text.secondary"
+                          noWrap
+                        >
+                          No Data
+                        </Typography>
+                      </TableCell>
+                    </TableRow>
+                  )}
                   {pairs[0].map((pair) => (
                     <TableRow hover key={pair.id}>
                       <TableCell>

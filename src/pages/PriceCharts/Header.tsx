@@ -1,5 +1,12 @@
 import React, { useState } from 'react';
-import { Box, Button, Menu, MenuItem, Typography } from '@mui/material';
+import {
+  Box,
+  Button,
+  CircularProgress,
+  Menu,
+  MenuItem,
+  Typography,
+} from '@mui/material';
 import { observer } from 'mobx-react-lite';
 import { useStores } from '../../hooks/UseStores';
 import { Pair } from '../../models/Pair';
@@ -39,11 +46,13 @@ export const Header = observer(() => {
         onClick={handleClick}
         variant="contained"
       >
-        {priceChartStore.selectedPair && (
+        {priceChartStore.selectedPair ? (
           <>
             {priceChartStore.selectedPairLeftTokenSymbol}-
             {priceChartStore.selectedPairRightTokenSymbol}
           </>
+        ) : (
+          <CircularProgress color="info" size={24.5} />
         )}
       </Button>
       <Menu
