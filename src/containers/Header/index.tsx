@@ -10,6 +10,7 @@ import {
 import MenuTwoToneIcon from '@mui/icons-material/MenuTwoTone';
 import CloseTwoToneIcon from '@mui/icons-material/CloseTwoTone';
 import { SidebarContext } from '../../contexts/SidebarContext';
+import { Wallet } from '../../components/Wallet';
 
 const HeaderWrapper = styled(Box)(
   ({ theme }) => `
@@ -21,7 +22,7 @@ const HeaderWrapper = styled(Box)(
     background-color: ${alpha(theme.header.background!.toString(), 0.95)};
     backdrop-filter: blur(3px);
     position: fixed;
-    justify-content: flex-end;
+    justify-content: space-between;
     width: 100%;
     @media (min-width: ${theme.breakpoints.values.lg}px) {
       left: ${theme.sidebar.width};
@@ -45,6 +46,7 @@ export const Header = () => {
         )}, 0px 5px 22px -4px ${alpha(theme.colors.alpha.black[100], 0.1)}`,
       }}
     >
+      <Wallet />
       <Box display="flex" alignItems="center">
         <Box
           component="span"
